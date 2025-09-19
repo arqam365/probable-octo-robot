@@ -29,6 +29,16 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+
+            implementation(libs.koin.android)
+            implementation(libs.koin.androidx.compose)
+            implementation(libs.ktor.client.okhttp)
+
+            implementation("com.google.firebase:firebase-installations:19.0.0")
+//            implementation(platform(libs.firebase.bom))
+//            implementation(libs.firebase.analytics)
+//            implementation(libs.firebase.messaging)
+//            implementation(libs.firebase.auth)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -37,9 +47,29 @@ kotlin {
             implementation(compose.ui)
             implementation(compose.components.resources)
             implementation(compose.components.uiToolingPreview)
-            implementation(libs.androidx.lifecycle.viewmodelCompose)
+            implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+
+            implementation(libs.navigation.compose)
+
+            implementation(libs.androidx.room.runtime)
+
+            implementation(libs.kotlinx.serialization.json)
+            implementation(libs.sqlite.bundled)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
+            api(libs.koin.core)
+
+            implementation(libs.bundles.ktor)
+            implementation(libs.bundles.coil)
+
+            implementation("dev.icerock.moko:permissions-compose:0.19.1")
         }
+
+        nativeMain.dependencies {
+            implementation(libs.ktor.client.darwin)
+        }
+
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
