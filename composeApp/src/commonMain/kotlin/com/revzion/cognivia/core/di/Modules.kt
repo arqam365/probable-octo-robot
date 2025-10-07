@@ -1,5 +1,7 @@
 package com.revzion.cognivia.core.di
 
+import com.revzion.cognivia.auth.AuthRepository
+import com.revzion.cognivia.auth.AuthViewModel
 import com.revzion.cognivia.feature.HomeBase.presentation.viewmodels.CourseScreenViewModel
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
@@ -11,6 +13,9 @@ expect val targetModule: Module
 
 val sharedModule= module{
     viewModel { CourseScreenViewModel() }
+
+    single { AuthRepository() }
+    viewModel { AuthViewModel(get()) }
 }
 
 fun initializeKoin(

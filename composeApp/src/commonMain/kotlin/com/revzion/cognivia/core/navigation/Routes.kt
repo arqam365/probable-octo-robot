@@ -9,6 +9,9 @@ sealed class Routes {
     data object IntroScreen
 
     @Serializable
+    data object Auth
+
+    @Serializable
     data object HomeGraph
 
     @Serializable

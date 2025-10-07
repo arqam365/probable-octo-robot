@@ -2,23 +2,10 @@ package com.revzion.cognivia.feature.HomeBase
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.DrawerValue
-import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.ModalDrawerSheet
-import androidx.compose.material3.ModalNavigationDrawer
-import androidx.compose.material3.NavigationDrawerItem
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.rememberDrawerState
-import androidx.compose.runtime.Composable
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.RectangleShape
@@ -29,46 +16,68 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import cognivia.composeapp.generated.resources.Res
 import cognivia.composeapp.generated.resources.icon_avatar
-import coil3.Image
+// ❌ REMOVE this line:
+// import coil3.Image
 import com.revzion.cognivia.app.primaryBlue
+import com.revzion.cognivia.auth.AuthViewModel
 import com.revzion.cognivia.core.navigation.BottomNavBar
 import com.revzion.cognivia.core.navigation.NavBarNavigation
+import com.revzion.cognivia.core.navigation.Routes
+import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.painterResource
+import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
 fun HomeBaseHolder(mainNav: NavController){
-    val navController= rememberNavController()
-    val drawerState= rememberDrawerState(initialValue = DrawerValue.Closed)
+    val navController = rememberNavController()
+    val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
+    val scope = rememberCoroutineScope()
+
+    val authVm: AuthViewModel = koinViewModel()
+
     ModalNavigationDrawer(
         drawerState = drawerState,
-        drawerContent = {NavigationDrawerContent()},
+        drawerContent = {
+            NavigationDrawerContent(
+                onLogout = {
+                    authVm.signOut()
+                    scope.launch { drawerState.close() }
+                    mainNav.navigate(
+                        route = Routes.Auth,
+                        navOptions = androidx.navigation.navOptions {
+                            popUpTo(Routes.HomeGraph) { inclusive = true }
+                            launchSingleTop = true
+                        }
+                    )
+                }
+            )
+        },
     ) {
         Scaffold(
-            bottomBar = {
-                BottomNavBar(navController = navController)
-            }
-        ) {
-
+            bottomBar = { BottomNavBar(navController = navController) }
+        ) { pv ->
             NavBarNavigation(
                 mainController = mainNav,
                 navController = navController,
-                paddingValues = it,
-                drawerState=drawerState
+                paddingValues = pv,
+                drawerState = drawerState
             )
-
         }
     }
 }
 
 @Composable
-fun NavigationDrawerContent(){
+fun NavigationDrawerContent(
+    onLogout: () -> Unit
+){
     ModalDrawerSheet(modifier= Modifier.fillMaxWidth(0.78f)){
         Row(modifier=Modifier.fillMaxWidth().padding(horizontal = 16.dp, vertical = 24.dp)) {
-            Column() {
+            Column {
                 Image(
                     painter = painterResource(Res.drawable.icon_avatar),
                     contentDescription = null,
-                    modifier = Modifier.size(60.dp).clip(CircleShape).border(1.dp, primaryBlue,shape= CircleShape)
+                    modifier = Modifier.size(60.dp).clip(CircleShape)
+                        .border(1.dp, primaryBlue, shape = CircleShape)
                 )
                 Spacer(modifier=Modifier.height(2.dp))
                 Text("Sharad Singh",
@@ -81,41 +90,16 @@ fun NavigationDrawerContent(){
             }
         }
         HorizontalDivider()
-        NavigationDrawerItem(
-            label = { Text("Kids Mode") },
-            selected = false,
-            shape = RectangleShape,
-            onClick = {}
-        )
-        NavigationDrawerItem(
-            label = { Text("Wishlist") },
-            selected = false,
-            shape = RectangleShape,
-            onClick = {}
-        )
-        NavigationDrawerItem(
-            label = { Text("Settings") },
-            selected = false,
-            shape = RectangleShape,
-            onClick = {}
-        )
-        NavigationDrawerItem(
-            label = { Text("Help & Support") },
-            selected = false,
-            shape = RectangleShape,
-            onClick = {}
-        )
-        NavigationDrawerItem(
-            label = { Text("About") },
-            selected = false,
-            shape = RectangleShape,
-            onClick = {}
-        )
+        NavigationDrawerItem(label = { Text("Kids Mode") }, selected = false, shape = RectangleShape, onClick = {})
+        NavigationDrawerItem(label = { Text("Wishlist") }, selected = false, shape = RectangleShape, onClick = {})
+        NavigationDrawerItem(label = { Text("Settings") }, selected = false, shape = RectangleShape, onClick = {})
+        NavigationDrawerItem(label = { Text("Help & Support") }, selected = false, shape = RectangleShape, onClick = {})
+        NavigationDrawerItem(label = { Text("About") }, selected = false, shape = RectangleShape, onClick = {})
         NavigationDrawerItem(
             label = { Text("Log Out") },
             selected = false,
             shape = RectangleShape,
-            onClick = {}
+            onClick = onLogout
         )
     }
 }

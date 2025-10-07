@@ -39,6 +39,10 @@ kotlin {
             implementation(libs.koin.androidx.compose)
             implementation(libs.ktor.client.okhttp)
 
+            implementation(project.dependencies.platform("com.google.firebase:firebase-bom:34.3.0"))
+            implementation("com.google.firebase:firebase-analytics")
+            implementation("com.google.android.gms:play-services-auth:21.4.0")
+
             implementation("com.google.firebase:firebase-installations:19.0.0")
 //            implementation(platform(libs.firebase.bom))
 //            implementation(libs.firebase.analytics)
@@ -54,8 +58,8 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtimeCompose)
-            implementation(project.dependencies.platform("com.google.firebase:firebase-bom:34.3.0"))
-            implementation("com.google.firebase:firebase-analytics")
+
+            implementation("dev.gitlive:firebase-auth:2.3.0")
 
             implementation(libs.navigation.compose)
 
