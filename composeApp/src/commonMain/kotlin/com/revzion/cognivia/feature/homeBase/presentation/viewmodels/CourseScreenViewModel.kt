@@ -1,12 +1,11 @@
-package com.revzion.cognivia.feature.HomeBase.presentation.viewmodels
+package com.revzion.cognivia.feature.homeBase.presentation.viewmodels
 
 import androidx.lifecycle.ViewModel
 import cognivia.composeapp.generated.resources.Res
-import cognivia.composeapp.generated.resources.course_banner_placeholder
 import cognivia.composeapp.generated.resources.demo_banner
 import cognivia.composeapp.generated.resources.icon_avatar
 import com.revzion.cognivia.core.enums.CourseFilter
-import com.revzion.cognivia.feature.HomeBase.domain.CourseDisplayItem
+import com.revzion.cognivia.feature.homeBase.domain.CourseDisplayItem
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 

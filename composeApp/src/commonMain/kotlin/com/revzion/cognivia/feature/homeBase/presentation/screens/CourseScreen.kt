@@ -1,4 +1,4 @@
-package com.revzion.cognivia.feature.HomeBase.presentation.screens
+package com.revzion.cognivia.feature.homeBase.presentation.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -45,8 +45,8 @@ import com.revzion.cognivia.app.surfaceBlue
 import com.revzion.cognivia.core.Composables.SearchBox
 import com.revzion.cognivia.core.enums.CourseFilter
 import com.revzion.cognivia.core.utils.Horizontal
-import com.revzion.cognivia.feature.HomeBase.domain.CourseDisplayItem
-import com.revzion.cognivia.feature.HomeBase.presentation.viewmodels.CourseScreenViewModel
+import com.revzion.cognivia.feature.homeBase.domain.CourseDisplayItem
+import com.revzion.cognivia.feature.homeBase.presentation.viewmodels.CourseScreenViewModel
 import org.jetbrains.compose.resources.painterResource
 import org.koin.compose.koinInject
 
@@ -225,7 +225,9 @@ fun TabsSelection(
             }
 
         }
-        CourseListDisplay(courseList=courseList, onClick = {},pv=pv)
+        CourseListDisplay(courseList=courseList, onClick = {
+
+        },pv=pv)
     }
 
 }

@@ -1,4 +1,4 @@
-package com.revzion.cognivia.feature.HomeBase.presentation.screens
+package com.revzion.cognivia.feature.homeBase.presentation.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -27,7 +27,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import cognivia.composeapp.generated.resources.Res
-import cognivia.composeapp.generated.resources.arrow_icon
 import cognivia.composeapp.generated.resources.icon_avatar
 import cognivia.composeapp.generated.resources.icon_camera
 import cognivia.composeapp.generated.resources.icon_right

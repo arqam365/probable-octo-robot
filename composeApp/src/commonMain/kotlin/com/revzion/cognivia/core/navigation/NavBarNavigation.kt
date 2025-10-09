@@ -7,10 +7,10 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.revzion.cognivia.feature.HomeBase.presentation.screens.CourseScreen
-import com.revzion.cognivia.feature.HomeBase.presentation.screens.FavScreen
-import com.revzion.cognivia.feature.HomeBase.presentation.screens.HomeScreen
-import com.revzion.cognivia.feature.HomeBase.presentation.screens.ProfileScreen
+import com.revzion.cognivia.feature.homeBase.presentation.screens.CourseScreen
+import com.revzion.cognivia.feature.homeBase.presentation.screens.FavScreen
+import com.revzion.cognivia.feature.homeBase.presentation.screens.HomeScreen
+import com.revzion.cognivia.feature.homeBase.presentation.screens.ProfileScreen
 
 @Composable
 fun NavBarNavigation(

@@ -2,7 +2,7 @@ package com.revzion.cognivia.core.di
 
 import com.revzion.cognivia.auth.AuthRepository
 import com.revzion.cognivia.auth.AuthViewModel
-import com.revzion.cognivia.feature.HomeBase.presentation.viewmodels.CourseScreenViewModel
+import com.revzion.cognivia.feature.homeBase.presentation.viewmodels.CourseScreenViewModel
 import org.koin.core.KoinApplication
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module

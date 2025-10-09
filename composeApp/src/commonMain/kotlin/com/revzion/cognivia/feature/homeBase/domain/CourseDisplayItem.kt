@@ -1,4 +1,4 @@
-package com.revzion.cognivia.feature.HomeBase.domain
+package com.revzion.cognivia.feature.homeBase.domain
 
 import org.jetbrains.compose.resources.DrawableResource
 

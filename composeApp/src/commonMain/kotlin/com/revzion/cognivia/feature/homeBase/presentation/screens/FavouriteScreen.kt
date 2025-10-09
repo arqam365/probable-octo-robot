@@ -1,4 +1,4 @@
-package com.revzion.cognivia.feature.HomeBase.presentation.screens
+package com.revzion.cognivia.feature.homeBase.presentation.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

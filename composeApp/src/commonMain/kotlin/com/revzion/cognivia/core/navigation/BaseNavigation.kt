@@ -8,10 +8,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.revzion.cognivia.auth.AuthViewModel
-import com.revzion.cognivia.feature.HomeBase.HomeBaseHolder
-import com.revzion.cognivia.feature.Login.AuthMode
-import com.revzion.cognivia.feature.Login.AuthScreen
-import com.revzion.cognivia.feature.Login.IntroScreen
+import com.revzion.cognivia.feature.homeBase.HomeBaseHolder
+import com.revzion.cognivia.feature.login.AuthMode
+import com.revzion.cognivia.feature.login.AuthScreen
+import com.revzion.cognivia.feature.login.IntroScreen
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable

@@ -1,4 +1,4 @@
-package com.revzion.cognivia.feature.HomeBase
+package com.revzion.cognivia.feature.homeBase
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border

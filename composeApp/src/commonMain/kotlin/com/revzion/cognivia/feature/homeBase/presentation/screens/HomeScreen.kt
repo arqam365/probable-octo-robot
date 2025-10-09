@@ -1,4 +1,4 @@
-package com.revzion.cognivia.feature.HomeBase.presentation.screens
+package com.revzion.cognivia.feature.homeBase.presentation.screens
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -26,7 +26,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.Icon
-import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -55,7 +54,7 @@ import com.revzion.cognivia.app.primaryBlue
 import com.revzion.cognivia.app.surfaceBlue
 import com.revzion.cognivia.core.Composables.SearchBox
 import com.revzion.cognivia.core.utils.formatMoney
-import com.revzion.cognivia.feature.HomeBase.domain.CourseDisplayItem
+import com.revzion.cognivia.feature.homeBase.domain.CourseDisplayItem
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.painterResource

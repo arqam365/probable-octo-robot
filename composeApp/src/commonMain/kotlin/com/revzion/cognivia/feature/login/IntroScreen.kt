@@ -1,4 +1,4 @@
-package com.revzion.cognivia.feature.Login
+package com.revzion.cognivia.feature.login
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
