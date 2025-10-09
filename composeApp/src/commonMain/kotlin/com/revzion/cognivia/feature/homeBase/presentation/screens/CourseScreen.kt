@@ -71,6 +71,7 @@ fun CourseScreen(navController: NavController, pv: PaddingValues){
 
 @Composable
 fun CourseListDisplay(
+    navController: NavController,
     courseList: List<CourseDisplayItem>,
     onClick: (CourseDisplayItem) -> Unit,
     pv: PaddingValues
@@ -225,9 +226,15 @@ fun TabsSelection(
             }
 
         }
-        CourseListDisplay(courseList=courseList, onClick = {
-
-        },pv=pv)
+        CourseListDisplay(
+            navController = navController,
+            courseList = courseList,
+            onClick = { selectedCourse ->
+                // navigate with courseName arg
+                navController.navigate("section_screen/${selectedCourse.name}")
+            },
+            pv = pv
+        )
     }
 
 }

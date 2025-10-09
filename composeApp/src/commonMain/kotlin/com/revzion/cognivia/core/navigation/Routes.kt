@@ -21,6 +21,9 @@ sealed class Routes {
     data object CourseScreen
 
     @Serializable
+    data object SectionScreen
+
+    @Serializable
     data object ProfileScreen
 
     @Serializable

@@ -11,6 +11,7 @@ import com.revzion.cognivia.feature.homeBase.presentation.screens.CourseScreen
 import com.revzion.cognivia.feature.homeBase.presentation.screens.FavScreen
 import com.revzion.cognivia.feature.homeBase.presentation.screens.HomeScreen
 import com.revzion.cognivia.feature.homeBase.presentation.screens.ProfileScreen
+import com.revzion.cognivia.feature.homeBase.presentation.screens.SectionScreen
 
 @Composable
 fun NavBarNavigation(
@@ -30,6 +31,10 @@ fun NavBarNavigation(
 
         composable<Routes.CourseScreen> {
             CourseScreen(navController=navController,pv=paddingValues)
+        }
+
+        composable<Routes.SectionScreen> {
+            SectionScreen(navController=navController,pv=paddingValues)
         }
 
         composable<Routes.ProfileScreen> {
